@@ -15,9 +15,9 @@
 
 ##### 代码说明：
 * hdy_flask_apschnduler
-* hdy_scheduler.py   为对源码的继承和修改，让支持ip字段
+  * hdy_scheduler.py   为对源码的继承和修改，让支持ip字段
 * t_flask_s
-* run.py  主启动脚本
-* add_job.py 测试动态添加任务，修改任务状态
-* config.py  配置文件，里面记录了mongodb的设置信息，需要自己调整
+  * run.py  主启动脚本
+  * add_job.py 测试动态添加任务，修改任务状态
+  * config.py  配置文件，里面记录了mongodb的设置信息，需要自己调整
 * task 测试的任务
