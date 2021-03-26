@@ -3,7 +3,7 @@ from hdy_flask_apschnduler.hdy_scheduler import HdyMongoDBJobStore
 
 
 class Config(object):
-    mongodb_client = MongoClient('mongodb://username:password@192.168.99.100:53015/yt_test', serverSelectionTimeoutMS=3000)
+    mongodb_client = MongoClient('mongodb://yeteng:123456@192.168.99.100:53015/yt_test', serverSelectionTimeoutMS=3000)
     SCHEDULER_JOBSTORES = {
         'default': HdyMongoDBJobStore(database='yt_test', client=mongodb_client)
     }

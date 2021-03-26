@@ -11,18 +11,15 @@ jobs = [
 
 
 if __name__ == '__main__':
-    """测试动态添加任务，后端干预任务"""
-    hdy_add_job(current_app.apscheduler, RUN_SERVER_LIST, jobs)
+    """测试后端干预任务"""
     current_app.apscheduler.start(paused=True)
+    # res = current_app.apscheduler.get_jobs()
 
-    res = current_app.apscheduler.get_job(id='test_1')
-    print(res.__getstate__())
-    res = current_app.apscheduler.get_jobs()
-    res = current_app.apscheduler.pause_job('test_1')
-    res = current_app.apscheduler.resume_job('test_1')
-    res = current_app.apscheduler.remove_job('test_2')
-    res = current_app.apscheduler.remove_job('test_3')
+    hdy_add_job(current_app.apscheduler, RUN_SERVER_LIST, jobs)  # 添加任务，封装有特殊处理
+    res = current_app.apscheduler.pause_job('test_1')  # 暂停
+    res = current_app.apscheduler.resume_job('test_1')  # 恢复
+    res = current_app.apscheduler.remove_job('test_3')  # 删除
     res = current_app.apscheduler.run_job('test_15')  # 立即执行一次
-    res = current_app.apscheduler.remove_all_jobs()
+    res = current_app.apscheduler.remove_all_jobs()  # 删除所有任务
     print(res)
 
